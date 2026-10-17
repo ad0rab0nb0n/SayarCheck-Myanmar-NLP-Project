@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        SayarCheck — Myanmar Language Assistant
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- ====================================================
+         HEADER
+         ==================================================== -->
+
+    <header>
+
+        <div class="brand">
+
+            <img
+                src="/static/sayarcheck-logo.png"
+                alt="SayarCheck Logo"
+                class="logo-image"
+            >
+
+        </div>
+
+
+        <div class="header-text">
+
+            <div class="brand-name">
+                SayarCheck
+            </div>
+
+            <div class="subtitle">
+                Myanmar Phrase Segmentation & Spelling Checker
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ====================================================
+         MAIN
+         ==================================================== -->
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="eyebrow">
+                MYANMAR NLP SYSTEM
+            </div>
+
+
+            <h1>
+                Write Myanmar text<br>
+                <span>with confidence.</span>
+            </h1>
+
+
+            <p>
+                SayarCheck automatically segments Myanmar
+                phrases and checks spelling to help you
+                write clearer text.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             WORKSPACE
+             ================================================= -->
+
+        <section class="workspace">
+
+
+            <!-- INPUT -->
+
+            <div class="text-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Input Text
+                        </h2>
+
+                        <p class="card-description">
+                            Enter Myanmar text to process
+                        </p>
+
+                    </div>
+
+
+                    <span class="language-badge">
+                        Myanmar
+                    </span>
+
+                </div>
+
+
+                <textarea
+                    id="inputText"
+                    placeholder="မြန်မာစာကို ဒီနေရာတွင် ရိုက်ထည့်ပါ..."
+                ></textarea>
+
+
+                <!-- EXAMPLES -->
+
+                <div class="suggestions-box">
+
+                    <span class="suggestions-label">
+                        Try an example
+                    </span>
+
+
+                    <div class="example-list">
+
+                        <button
+                            type="button"
+                            onclick="useExample('မြန်မာနိုင်ငံသည်အရှေ့တောင်အာရှတွင်တည်ရှိသည်။')"
+                        >
+                            Test sentence 1
+                        </button>
+
+
+                        <button
+                            type="button"
+                            onclick="useExample('ကျောင်းသားတေစာကြည့်တိုက်မှာစာဖတ်နေကြပါတယ်။')"
+                        >
+                            Test sentence 2
+                        </button>
+
+
+                        <button
+                            type="button"
+                            onclick="useExample('ကျွန်တော်ကွန်ပျူတာသိပ်ပံဘာသာရပ်ကိုလေ့လာနေပါတယ်။')"
+                        >
+                            Test sentence 3
+                        </button>
+
+
+                        <button
+                            type="button"
+                            onclick="useExample('ကျွန်တော်မြန်မာစာကိုလေ့လာနေပါတယ်။ဒီနေ့အဆင်ပြေ်ပါတယ်။မနက်ဖြန်လည်းဆက်လေ့လာမယ်လို့စဉ်းစားထားတယ်။စာရေးတဲ့အခါစာလုံးပေါင်းမှန်ကန်ဖို့ရေးကြီးတယ်။')"
+                        >
+                            Test sentence 4
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+
+                <div class="actions">
+
+                    <button
+                        class="clear-btn"
+                        onclick="clearText()"
+                    >
+                        Clear
+                    </button>
+
+
+                    <button
+                        class="process-btn"
+                        onclick="processText()"
+                    >
+
+                        <span>
+                            Process Text
+                        </span>
+
+                        <span class="button-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ARROW -->
+
+            <div class="process-arrow">
+
+                <div class="arrow-circle">
+                    →
+                </div>
+
+            </div>
+
+
+            <!-- OUTPUT -->
+
+            <div class="text-card output-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Processed Output
+                        </h2>
+
+                        <p class="card-description">
+                            Corrected & segmented result
+                        </p>
+
+                    </div>
+
+
+                    <span class="result-badge">
+                        Result
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="outputText"
+                    class="output"
+                >
+
+                    <div class="output-placeholder">
+
+                        <div class="placeholder-icon">
+                            ✓
+                        </div>
+
+                        <p>
+                            Your processed text
+                            will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="status"
+                    class="status"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FEATURES
+             ================================================= -->
+
+        <section class="features">
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">
+                    01
+                </div>
+
+                <div>
+
+                    <strong>
+                        Unicode Normalization
+                    </strong>
+
+                    <p>
+                        Cleans and normalizes Myanmar
+                        Unicode text before processing.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">
+                    02
+                </div>
+
+                <div>
+
+                    <strong>
+                        Phrase Segmentation
+                    </strong>
+
+                    <p>
+                        Uses BiLSTM-CRF to identify
+                        Myanmar phrase boundaries.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">
+                    03
+                </div>
+
+                <div>
+
+                    <strong>
+                        Spelling Correction
+                    </strong>
+
+                    <p>
+                        Detects spelling errors and
+                        automatically suggests corrections.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section class="about-project">
+
+            <div class="about-label">
+                ABOUT SAYARCHECK
+            </div>
+
+
+            <h2>
+                Making Myanmar text<br>
+                <span>easier to write and understand.</span>
+            </h2>
+
+
+            <p>
+                SayarCheck is an NLP-based Myanmar language
+                processing system designed for phrase
+                segmentation and spelling checking in
+                one simple interface.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ====================================================
+         FOOTER
+         ==================================================== -->
+
+    <footer>
+
+        <div class="footer-brand">
+            SayarCheck
+        </div>
+
+
+        <div>
+            Myanmar Phrase Segmentation & Spelling Checker
+        </div>
+
+
+        <div class="footer-copy">
+            Myanmar NLP Project
+        </div>
+
+    </footer>
+
+
+</div>
+
+
+<script src="/static/script.js"></script>
+
+</body>
+
+</html>

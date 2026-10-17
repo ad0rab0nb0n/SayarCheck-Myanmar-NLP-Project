@@ -1,0 +1,55 @@
+MYANMAR NLP PROJECT - BASELINE RESULT
+
+Model:
+BiLSTM-CRF
+
+Task:
+Myanmar Word Segmentation
+
+Training Examples:
+489,719
+
+Validation Examples:
+54,414
+
+Official Test Examples:
+28,639
+
+Best Validation F1:
+0.9013
+
+Official Test F1:
+0.9008
+
+Vocabulary Size:
+54,395
+
+Maximum Sequence Length:
+256
+
+Embedding Dimension:
+128
+
+LSTM Hidden Dimension:
+128
+
+LSTM Layers:
+2
+
+Bidirectional:
+Yes
+
+Dropout:
+0.3
+
+Optimizer:
+Adam
+
+Learning Rate:
+0.001
+
+Epochs:
+3
+
+Device:
+Apple MPS
