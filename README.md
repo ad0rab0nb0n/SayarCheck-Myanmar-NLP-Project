@@ -12,6 +12,21 @@ A Myanmar Natural Language Processing (NLP) project combining deep learning, tex
 - **Data Augmentation:** Includes scripts for generating augmented and spelling-related training data.
 - **Model Training and Evaluation:** Includes training, prediction, and evaluation scripts.
 
+## Screenshots
+
+### SayarCheck — Homepage
+
+The landing page introduces SayarCheck's Myanmar phrase segmentation and spelling-checking features.
+
+![SayarCheck Homepage](screenshots/sayarcheck-homepage2.png)
+
+### Myanmar Text Processing and Spelling Correction
+
+An example of the application processing Myanmar text and displaying a spelling correction suggestion.
+
+![SayarCheck Spelling Correction](screenshots/sayarcheck-spelling-correction.png)
+
+
 ## Baseline Results
 
 The following results are reported in `BASELINE_RESULT.txt`.
