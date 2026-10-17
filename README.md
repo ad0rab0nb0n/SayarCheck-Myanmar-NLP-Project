@@ -18,13 +18,13 @@ A Myanmar Natural Language Processing (NLP) project combining deep learning, tex
 
 The landing page introduces SayarCheck's Myanmar phrase segmentation and spelling-checking features.
 
-![SayarCheck Homepage](screenshots/sayarcheck-homepage2.png)
+![SayarCheck Homepage](screenshots/homepage2.png)
 
 ### Myanmar Text Processing and Spelling Correction
 
 An example of the application processing Myanmar text and displaying a spelling correction suggestion.
 
-![SayarCheck Spelling Correction](screenshots/sayarcheck-spelling-correction.png)
+![SayarCheck Spelling Correction](screenshots/spelling-correction.png)
 
 
 ## Baseline Results
