@@ -1,4 +1,4 @@
-# Myanmar NLP — Word Segmentation & Spelling Correction
+# Sayar Check:Myanmar NLP — Word Segmentation & Spelling Correction
 
 A Myanmar Natural Language Processing (NLP) project combining deep learning, text preprocessing, and dictionary-based spelling correction in a Flask web application.
 
